@@ -42,6 +42,10 @@ const Header = () => {
                         {mobileMenu ? <CgClose className="text-white text-xl" /> : <SlMenu className="text-white text-xl" />}
                     </div>
                 )}
+                <Link to="/" className="flex h-5 items-center">
+                    <img className="h-full hidden dark:md:block" src={ytLogo} alt="YouTube"></img>
+                    <img className="h-full md:hidden" src={ytLogoMobile} alt="YouTube"></img>
+                </Link>
             </div>
         </div>
     )

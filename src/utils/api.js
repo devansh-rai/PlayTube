@@ -1,7 +1,4 @@
 import axios from 'axios';
-// import dotenv from 'dotenv';
-// dotenv.config();
-// import REACT_APP_YOUTUBE_API_KEY from "../../.env"
 
 const BASE_URL = 'https://youtube138.p.rapidapi.com';
 
@@ -12,7 +9,7 @@ const options = {
       gl: 'US'
     },
     headers: {
-      'X-RapidAPI-Key': 'b6948c82c2msh0798a657c887088p1c8ae6jsnf917ec01a727',
+      'X-RapidAPI-Key': import.meta.env.VITE_YOUTUBE_API_KEY,
       'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
     }
   };
