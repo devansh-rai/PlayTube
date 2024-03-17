@@ -3,16 +3,16 @@ import { createContext, useState, useEffect } from "react";
 import {fetchDataFromApi} from "../utils/api";
 
 export const Context = createContext();
-
+ 
 export const AppContext = ((props) => {
     const [loading, setLoading] = useState(false);
     const [searchResults, setSearchResults] = useState(false);
-    const [selectCategories, setselectCategories] = useState("New");
+    const [selectedCategory, setSelectedCategory] = useState("New");
     const [mobileMenu, setMobileMenu] = useState(false);
 
     useEffect(() => {
-        fetchSelectedCategoryData(selectCategories);
-    },[selectCategories]);
+        fetchSelectedCategoryData(selectedCategory);
+    },[selectedCategory]);
 
     const fetchSelectedCategoryData = async (query) => {
         setLoading(true);
@@ -28,8 +28,8 @@ export const AppContext = ((props) => {
             setLoading,
             searchResults,
             setSearchResults,
-            selectCategories,
-            setselectCategories,
+            selectedCategory,
+            setSelectedCategory,
             mobileMenu,
             setMobileMenu,
             }}>
