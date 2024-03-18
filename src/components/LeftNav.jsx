@@ -28,21 +28,22 @@ function leftNav()
       <div className='flex px-5 flex-col'>
         {categories.map((item)=>{
           return (
-            <>
+            <React.Fragment key={item.name}>
               <LeftNavMenuItem 
-                text = {item.type === "home" ? "Home" : item.name}
-                icon = {<item.icon />}
-                action = {()=>{
-                  clickHandler(item.name,item.type);
-                  navigate("/");
-              }}
-                classn = {`${selectedCategory===item.name ? "bg-white/[0.15]" : ""}`} 
-                />
+                  text = {item.type === "home" ? "Home" : item.name}
+                  icon = {<item.icon />}
+                  key = {item.name}
+                  action = {()=>{
+                    clickHandler(item.name,item.type);
+                    navigate("/");
+                }}
+                  classn = {`${selectedCategory===item.name ? "bg-white/[0.15]" : ""}`} 
+                  />
                 
                 {item.divider && (
                   <hr className='my-5 border-white/[0.2]' />
                 )}
-            </>
+            </React.Fragment>
           )
         })}
         <hr className='my-5 border-white/[0.2]' />
